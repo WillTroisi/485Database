@@ -1,4 +1,5 @@
 package org.example;
+import org.example.controller.MemberService;
 import org.example.model.dao.ClientDAO;
 import org.example.model.dao.MemberDAO;
 import org.example.model.entity.Client;
@@ -26,17 +27,19 @@ public class Main {
 //
 //        clientDAO.create(client);
 
-        MemberDAO memberDAO = new MemberDAO();
-
-        Member member = new Member();
-        member.setName("Tom");
-        member.setEmail("tro@tr.tro");
-        member.setPhoneNumber("123-456-789");
-        member.setDt_join(Date .valueOf(LocalDate.now()));
-        memberDAO.create(member);
-
-        Member found = memberDAO.read(member.getID());
-        System.out.println(found);
+//        MemberDAO memberDAO = new MemberDAO();
+//
+//        Member member = new Member();
+//        member.setName("Tom");
+//        member.setEmail("tro@tr.tro");
+//        member.setPhoneNumber("123-456-789");
+//        member.setDt_join(Date .valueOf(LocalDate.now()));
+//        memberDAO.create(member);
+//
+//        Member found = memberDAO.read(member.getID());
+//        System.out.println(found);
+        MemberService memberService = new MemberService();
+        memberService.createMember("Hello", "123@3.4", "123-456-765", Date.valueOf(LocalDate.now()));
     }
 
 }
